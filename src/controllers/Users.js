@@ -39,6 +39,10 @@ const login = (req, res) => {
     .catch((e) => res.status(hs.INTERNAL_SERVER_ERROR).send(e));
 };
 
+//! ÖDEV Video Üzerinden izleyip implemente edilecek.
+// https://www.youtube.com/watch?v=pMi3PiITsMc
+const resetPassword = () => {};
+
 module.exports = {
   index,
   create,

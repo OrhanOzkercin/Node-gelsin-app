@@ -1,9 +1,18 @@
 const Joi = require("joi");
+
 const createUser = Joi.object({
   first_name: Joi.string().required().min(2),
   last_name: Joi.string().required().min(2),
   email: Joi.string().email().required().min(8),
   password: Joi.string().required().min(8),
+});
+
+const createAdminUser = Joi.object({
+  first_name: Joi.string().required().min(2),
+  last_name: Joi.string().required().min(2),
+  email: Joi.string().email().required().min(8),
+  password: Joi.string().required().min(8),
+  isAdmin: Joi.boolean().default(true),
 });
 
 const updateUser = Joi.object({
@@ -28,6 +37,7 @@ const userLogin = Joi.object({
 
 module.exports = {
   createUser,
+  createAdminUser,
   userQuery,
   updateUser,
   userLogin,

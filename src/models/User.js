@@ -23,6 +23,7 @@ const UserSchema = new Mongoose.Schema(
       },
     ],
     favorites: [], //! Products Ref..
+    isAdmin: Boolean,
   },
   { timestamps: true, versionKey: false }
 );
