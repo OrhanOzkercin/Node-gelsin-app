@@ -2,8 +2,10 @@ const httpStatus = require("http-status");
 
 const validate = (schema, source) => (req, res, next) => {
   //! req.body, req.params, req.query
+  console.log("1");
   const { value, error } = schema.validate(req[source]);
-
+  console.log("2");
+  debugger
   if (error) {
     const errorMessage = error?.details
       ?.map((detail) => detail?.message)

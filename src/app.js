@@ -3,10 +3,12 @@ const fileUpload = require("express-fileupload");
 const { UserRoutes, ProductRoutes } = require("./routes");
 const loaders = require("./loaders");
 const config = require("./config");
+const events = require("./scripts/events");
 const path = require("path");
 
 config();
 loaders();
+events();
 
 const app = express();
 app.use("/product-images", express.static(path.join(__dirname, "./", "uploads/products")));
